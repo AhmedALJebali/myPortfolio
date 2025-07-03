@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "imgpath": [
+      "/ProjectsAssets/CoffeeGallery/images/1.png",
+      "/ProjectsAssets/CoffeeGallery/images/2.png",
+      "/ProjectsAssets/CoffeeGallery/images/3.png"
+    ],
+    "title": "Coffee Shop Gallery",
+    "subtitle": " A fully responsive coffee shop website created using HTML, CSS, and JavaScript. This project features a modern, clean design with smooth animations and interactive elements.",
+    "link": "https://coffeegalery.netlify.app/#",
+    "github": "https://github.com/AhmedALJebali/CoffeGallery/",
+    "Category": "html&Css javascript",
+    "Date": "2025-07-01",
+    "README": "https://raw.githubusercontent.com/AhmedALJebali/CoffeGallery/main/README.md",
+    "more": ""
+  }
+]
