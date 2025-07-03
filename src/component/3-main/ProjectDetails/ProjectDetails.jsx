@@ -16,11 +16,13 @@ export default function ProjectDetails() {
   const isSingleImage = project?.imgpath?.length === 1;
 
   useEffect(() => {
-    // Fetch markdown content if needed
-    fetch(project.README)
-      .then((res) => res.text())
-      .then(setMarkdown);
-  }, []);
+    if (project.README) {
+      fetch(project.README)
+        .then((res) => res.text())
+        .then(setMarkdown)
+        .catch(() => setMarkdown("# Project Details"));
+    }
+  }, [project.README]);
 
   if (!project) {
     return <p className="not-found">Error 404: Project Not Found</p>;
@@ -75,41 +77,52 @@ export default function ProjectDetails() {
                       rel="noopener noreferrer"
                     ></a>
                   )}
-
-                  <a
-                    className="icon-github"
-                    href={project.github || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  ></a>
+                  {project.github && (
+                    <a
+                      className="icon-github"
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    ></a>
+                  )}
                 </div>
               </header>
-              <Swiper
-                breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                  },
-                  768: {
-                    slidesPerView: isSingleImage ? 1 : 2,
-                  },
-                
-                }}
-                spaceBetween={10}
-                navigation={!isSingleImage}
-                loop={!isSingleImage}
-                modules={[Navigation]}
-                className={`mySwiper ${isSingleImage ? "single-slide" : ""}`}
-              >
-                {project.imgpath.map((img, index) => (
-                  <SwiperSlide key={`${project.id}-slide-${index}`}>
-                    <img src={img} alt={`Project ${index + 1}`} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              <div className="article-body"></div>{" "}
-              <div className="markdown-body README">
-                <ReactMarkdown>{markdown}</ReactMarkdown>
-              </div>
+              {project.imgpath && (
+                <Swiper
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      slidesPerView: isSingleImage ? 1 : 2,
+                    },
+                  }}
+                  spaceBetween={10}
+                  navigation={!isSingleImage}
+                  loop={!isSingleImage}
+                  modules={[Navigation]}
+                  className={`mySwiper ${isSingleImage ? "single-slide" : ""}`}
+                >
+                  {project.imgpath.map((img, index) => (
+                    <SwiperSlide key={`${project.id}-slide-${index}`}>
+                      <img
+                        src={img}
+                        alt={
+                          project.title
+                            ? `${project.title} screenshot ${index + 1}`
+                            : `Project ${index + 1}`
+                        }
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
+              {project.more && <div className="article-body"></div>}
+              {markdown && (
+                <div className="markdown-body README">
+                  <ReactMarkdown>{markdown}</ReactMarkdown>
+                </div>
+              )}
             </article>
           </div>
         </div>

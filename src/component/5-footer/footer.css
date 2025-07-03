@@ -23,5 +23,6 @@ footer.flex p {
   footer.flex {
     flex-direction: column;
     gap: 2rem;
+    font-size: 10px;
   }
 }
