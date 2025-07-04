@@ -8,21 +8,32 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Typewriter } from "react-simple-typewriter";
-
 export default function ProjectDetails() {
+
+
   const { id } = useParams();
   const [markdown, setMarkdown] = useState("# Project Details");
   const project = projectsData.find((p) => String(p.id) === id);
   const isSingleImage = project?.imgpath?.length === 1;
 
   useEffect(() => {
+    setMarkdown("");
+
     if (project.README) {
       fetch(project.README)
-        .then((res) => res.text())
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`Failed to load file: ${res.statusText}`);
+          }
+          return res.text();
+        })
         .then(setMarkdown)
-        .catch(() => setMarkdown("# Project Details"));
+        .catch((err) => {
+          console.error(err);
+          setMarkdown("# Project Details\n\n*Error: Could not load the project's README file.*");
+        });
     }
-  }, [project.README]);
+  }, [project.id, project.README]); 
 
   if (!project) {
     return <p className="not-found">Error 404: Project Not Found</p>;
@@ -31,10 +42,10 @@ export default function ProjectDetails() {
   return (
     <div className="page-wrapper">
       <div className="project-details-container">
-        <button
+        <a
+          href="/"
           className="back-button"
           aria-label="Go back"
-          onClick={() => window.history.back()}
         >
           <svg
             viewBox="0 0 16 16"
@@ -49,7 +60,7 @@ export default function ProjectDetails() {
               strokeLinejoin="round"
             />
           </svg>
-        </button>
+        </a>
 
         <div className="content-wrapper">
           <div className="article-box">

@@ -1,4 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 import Header from "./component/1-header/Header";
 import Hero from "./component/2-hero/Hero";
@@ -7,25 +11,24 @@ import Contact from "./component/4-contact/Contact";
 import Footer from "./component/5-footer/Footer";
 import ProjectDetails from "./component/3-main/ProjectDetails/ProjectDetails";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+
 function App() {
-  let [disable, setdisable] = useState(true);
+  let [disable, setDisable] = useState(true);
+
   useEffect(() => {
-    console.log(scrollY);
-    window.onscroll = () => {
-      if (scrollY > 200) {
-        setdisable(false);
-      } else {
-        setdisable(true);
-      }
+    const handleScroll = () => {
+      setDisable(window.scrollY <= 200);
     };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div id="up" className="container">
-    
-      <Header />
-      <Router>
+    <Router>
+      <div id="up" className="container">
+        <Header />
+
         <Routes>
           <Route
             path="/"
@@ -42,12 +45,14 @@ function App() {
           />
           <Route path="/ProjectDetails/:id" element={<ProjectDetails />} />
         </Routes>
-      </Router>
-      <Footer />
-      <a id="scrroler" className={disable ? "disable" : null} href="#up">
-        <button className="icon-keyboard_arrow_up scroll2Top"></button>
-      </a>
-    </div>
+
+        <Footer />
+
+        <a id="scrroler" className={disable ? "disable" : ""} href="#up">
+          <button className="icon-keyboard_arrow_up scroll2Top"></button>
+        </a>
+      </div>
+    </Router>
   );
 }
 
