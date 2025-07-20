@@ -9,8 +9,6 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Typewriter } from "react-simple-typewriter";
 export default function ProjectDetails() {
-
-
   const { id } = useParams();
   const [markdown, setMarkdown] = useState("# Project Details");
   const project = projectsData.find((p) => String(p.id) === id);
@@ -30,10 +28,12 @@ export default function ProjectDetails() {
         .then(setMarkdown)
         .catch((err) => {
           console.error(err);
-          setMarkdown("# Project Details\n\n*Error: Could not load the project's README file.*");
+          setMarkdown(
+            "# Project Details\n\n*Error: Could not load the project's README file.*"
+          );
         });
     }
-  }, [project.id, project.README]); 
+  }, [project.id, project.README]);
 
   if (!project) {
     return <p className="not-found">Error 404: Project Not Found</p>;
@@ -42,11 +42,7 @@ export default function ProjectDetails() {
   return (
     <div className="page-wrapper">
       <div className="project-details-container">
-        <a
-          href="/"
-          className="back-button"
-          aria-label="Go back"
-        >
+        <a href="/" className="back-button" aria-label="Go back">
           <svg
             viewBox="0 0 16 16"
             fill="none"
@@ -128,7 +124,12 @@ export default function ProjectDetails() {
                   ))}
                 </Swiper>
               )}
-              {project.more && <div className="article-body"></div>}
+              {project.more && (
+                <div
+                  dangerouslySetInnerHTML={{ __html: project.more }}
+                  className="article-body"
+                ></div>
+              )}
               {markdown && (
                 <div className="markdown-body README">
                   <ReactMarkdown>{markdown}</ReactMarkdown>

@@ -14,5 +14,30 @@
     "Date": "2025-07-01",
     "README": "https://raw.githubusercontent.com/AhmedALJebali/CoffeGallery/main/README.md",
     "more": ""
+  },
+
+  {
+    "id": 2,
+    "imgpath": [
+      "/ProjectsAssets/FullEcommerce/Figma_Cover.jpg",
+      "/ProjectsAssets/FullEcommerce/Login.png",
+      "/ProjectsAssets/FullEcommerce/Product_Details.jpg",
+      "/ProjectsAssets/FullEcommerce/Sign_up.jpg",
+      "/ProjectsAssets/FullEcommerce/Checkout.jpg",
+      "/ProjectsAssets/FullEcommerce/Homepage.jpg",
+      "/ProjectsAssets/FullEcommerce/Orders.png",
+      "/ProjectsAssets/FullEcommerce/Wishlist.png",
+      "/ProjectsAssets/FullEcommerce/Cart.png",
+      "/ProjectsAssets/FullEcommerce/Listing.jpg",
+      "/ProjectsAssets/FullEcommerce/Shipping_Address.png"
+    ],
+    "title": "Full E-Commerce UI",
+    "subtitle": "A fully responsive frontend for an e-commerce web application built using Next.js, Tailwind CSS, and Framer Motion. The project covers the full shopping experience ",
+    "link": "https://full-e-commerce-w.netlify.app/",
+    "github": "https://github.com/AhmedALJebali/Full-E-Commerce",
+    "Category": "react Next.js TailwindCSS ",
+    "Date": "2025-07-20",
+    "README": "https://raw.githubusercontent.com/AhmedALJebali/Full-E-Commerce/master/README.md",
+    "more": "<ul className='list-disc list-inside text-sm leading-6 text-gray-700 dark:text-gray-300'><li>Next.js 15 App Router architecture</li><li>Product filtering with smooth animations (Framer Motion)</li><li>Cart system (localStorage for guests, synced with API for logged-in users)</li><li>Wishlist management UI</li><li>Responsive layout with Tailwind</li><li>Authentication pages: login, register, profile</li><li>Built with modular and reusable components</li></ul>"
   }
 ]

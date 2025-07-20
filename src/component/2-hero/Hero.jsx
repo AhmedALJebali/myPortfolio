@@ -4,7 +4,7 @@ import developer from "../../animation/dev.json";
 import Lottie from "lottie-react";
 import { motion } from "framer-motion";
 // @ts-ignore
-import avatar from "../../../public/me-modified.png";
+import avatar from "/me-modified.png";
 import { Typewriter } from "react-simple-typewriter";
 function Hero() {
   const lottieRef = useRef();
