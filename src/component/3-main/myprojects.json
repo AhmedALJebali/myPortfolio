@@ -45,7 +45,7 @@
     "imgpath": ["/ProjectsAssets/NewPortfolio/cover.png"],
     "title": "Newportfolio",
     "subtitle": "A modern and responsive portfolio website built with Next.js 15, React, and Tailwind CSS. It highlights personal projects, services and testimonials with smooth animations.",
-    "link": "https://aljebali.netlify.app/",
+    "link": "https://newportfolionotch.netlify.app/",
     "github": "https://github.com/AhmedALJebali/Newportfolio",
     "Category": "Next.js react TailwindCSS ",
     "Date": "2025-07-22",
