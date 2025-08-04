@@ -11,7 +11,7 @@ function Main() {
   const [myprojects] = useState(customdata);
 
   // List of filter button labels
-  const buttons = ["all project", "html&Css", "javascript", "react","Next.js","TailwindCSS"];
+  const buttons = ["all project", "html&Css", "javascript", "react","Next.js","Typescript","TailwindCSS"];
 
   // Filters the projects based on selected category
   const filteredProjects = useMemo(() => {

@@ -22,7 +22,6 @@ function Header() {
   // Menu links
   const links = [
     { label: "About", href: "/#" },
-    { label: "Articles", href: "/#" },
     { label: "Projects", href: "/#main" },
     { label: "Contact", href: "/#contact" },
   ];

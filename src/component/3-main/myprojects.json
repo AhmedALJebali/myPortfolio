@@ -51,5 +51,31 @@
     "Date": "2025-07-22",
     "README": "https://raw.githubusercontent.com/AhmedALJebali/Newportfolio/master/README.md",
     "more": "<ul className='list-disc list-inside text-sm leading-6 text-gray-700 dark:text-gray-300'><li>Built with Next.js 15 App Router</li><li>Fully responsive layout and design</li><li>Dark/Light mode toggle</li><li>Reusable and modular components</li><li>Framer Motion-powered animations</li><li>Lucide icons integration</li><li>Clean structure and scalable codebase</li></ul>"
+  },
+  {
+    "id": 4,
+    "imgpath": ["/ProjectsAssets/GameGallery/cover.png"],
+    "title": "GameGallery",
+    "subtitle": "A modern and responsive gallery for showcasing games, built using Next.js 15, Tailwind CSS, and Framer Motion. It features category filtering, smooth transitions, and a clean layout.",
+    "link": "https://gamegalleryaljebali.netlify.app/",
+    "github": "https://github.com/AhmedALJebali/Gamegallery",
+    "Category": "Next.js react TailwindCSS Typescript",
+    "Date": "2025-07-30",
+    "README": "https://raw.githubusercontent.com/AhmedALJebali/Gamegallery/master/README.md",
+    "more": "<ul className='list-disc list-inside text-sm leading-6 text-gray-700 dark:text-gray-300'><li>Built with Next.js 15 App Router</li><li>Dynamic filtering of game cards</li><li>Image gallery with smooth animations</li><li>Dark/Light mode support</li><li>Modular and reusable card components</li><li>Fully mobile responsive design</li></ul>"
+  },
+  {
+    "id": 5,
+    "imgpath": [
+      "/ProjectsAssets/myPortfolio/me-modified.png"
+    ],
+    "title": "ALJEBALI Portfolio Web App",
+    "subtitle": "A modern, responsive, and animated portfolio built with React + Vite — designed to showcase your projects, skills, and contact in an elegant and interactive way.",
+    "link": "https://aljebali.netlify.app/",
+    "github": "https://github.com/AhmedALJebali/myPortfolio",
+    "Category": "react TailwindCSS",
+    "Date": "2025-08-01",
+    "README": "https://raw.githubusercontent.com/AhmedALJebali/myPortfolio/main/README.md",
+    "more": "<ul className='list-disc list-inside text-sm leading-6 text-gray-700 dark:text-gray-300'><li>Fully responsive design with CSS Modules</li><li>Project gallery with filterable cards and links</li><li>Dynamic project detail pages with Swiper.js and live README rendering</li><li>Dark/Light mode with localStorage persistence</li><li>Contact form with Formspree integration and Lottie animations</li><li>Includes scroll-to-top button and custom 404 fallback</li><li>Built with React 18, Vite, Swiper.js, Framer Motion, React Markdown</li></ul>"
   }
 ]
